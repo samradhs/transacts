@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="in.transacts.utils.TransactionUtils"/>
+        <import type="in.transacts.utils.DateTimeUtils"/>
+
+        <variable
+            name="transaction"
+            type="in.transacts.ui.TransactionSer"/>
+
+    </data>
+
+    <!--<androidx.cardview.widget.CardView-->
+        <!--style="@style/ViewMatchWidth"-->
+        <!--app:cardUseCompatPadding="true"-->
+        <!--app:cardCornerRadius="@dimen/card_radius"-->
+        <!--app:cardElevation="@dimen/card_elevation"-->
+        <!--android:layout_marginStart="@dimen/margin_small">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            style="@style/ViewMatchWidth"
+            android:padding="@dimen/margin_very_large">
+
+            <TextView
+                android:id="@+id/merchant_tv"
+                style="@style/ViewMatchWidth"
+                android:text="@{transaction.merchant.isEmpty() ? @string/bill : transaction.merchant}"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/date_tv"/>
+
+            <TextView
+                android:id="@+id/amt_tv"
+                style="@style/ViewMatchWidth"
+                android:text="@{@string/rupee(TransactionUtils.INSTANCE.getFormattedAmount(transaction))}"
+                android:textColor="@{TransactionUtils.INSTANCE.isDebit(transaction) ? @color/debit : @color/credit}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/merchant_tv"
+                app:layout_constraintRight_toLeftOf="@id/merchant_tv"
+                android:layout_marginTop="@dimen/margin_small"/>
+
+            <TextView
+                android:id="@+id/date_tv"
+                style="@style/ViewWrap"
+                android:text="@{DateTimeUtils.INSTANCE.getDateFormatted(transaction.ts)}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/merchant_tv"/>
+
+            <TextView
+                android:id="@+id/time_tv"
+                style="@style/ViewWrap"
+                android:text="@{DateTimeUtils.INSTANCE.getTimeFormatted(transaction.ts)}"
+                app:layout_constraintRight_toRightOf="@id/date_tv"
+                app:layout_constraintTop_toBottomOf="@id/date_tv"
+                app:layout_constraintTop_toTopOf="@id/amt_tv"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/acc_type_tv"-->
+                <!--style="@style/ViewMatchWidth"-->
+                <!--android:text="@{transaction.accountType}"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/trans_type_tv"-->
+                <!--style="@style/ViewMatchWidth"-->
+                <!--android:text="@{transaction.transactionType}"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/num_tv"-->
+                <!--style="@style/ViewMatchWidth"-->
+                <!--android:text="@{TransactionUtils.INSTANCE.getFormattedNumber(transaction)}"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/bank_tv"-->
+                <!--style="@style/ViewMatchWidth"-->
+                <!--android:text="@{transaction.bank}"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--</androidx.cardview.widget.CardView>-->
+
+</layout>

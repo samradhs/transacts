@@ -1,0 +1,95 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="summary"
+            type="in.transacts.ui.landing.AccountSummary"/>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ViewMatchWidth"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/card_elevation"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/ViewMatchWidth"
+            android:padding="@dimen/margin_very_large">
+
+            <TextView
+                android:id="@+id/bank_tv"
+                style="@style/ViewMatchWidth"
+                android:text="@{summary.bankName}"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/num_tv"/>
+
+            <TextView
+                android:id="@+id/num_tv"
+                style="@style/ViewMatchWidth"
+                android:text="@{@string/num_start(summary.number)}"
+                android:textSize="@dimen/text_size_very_large"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bank_tv"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"/>
+
+            <TextView
+                android:id="@+id/credited_tv"
+                style="@style/ViewWrap"
+                android:text="@{@string/credited(summary.credited)}"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/credit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/num_tv"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small"/>
+
+            <TextView
+                android:id="@+id/debited_tv"
+                style="@style/ViewWrap"
+                android:text="@{@string/debited(summary.debited)}"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/debit"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/credited_tv"
+                android:layout_marginEnd="@dimen/margin_small"/>
+
+            <TextView
+                android:id="@+id/net_tv"
+                style="@style/ViewWrap"
+                android:text="@string/net"
+                android:textSize="@dimen/text_size_small"
+                android:textAllCaps="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/credited_tv"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <TextView
+                android:id="@+id/net_amt"
+                style="@style/ViewWrap"
+                android:text="@{summary.net}"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@{summary.netDebit ? @color/debit : @color/credit}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/net_tv"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

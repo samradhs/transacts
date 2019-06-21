@@ -1,3 +1,48 @@
-<resources>
-    <string name="app_name">SamExpense</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Transacts</string>
+    <string name="rupee">₹ %1$s</string>
+
+    <string-array name="rejection_strings">
+        <item>one time password</item>
+        <item>onetime password</item>
+        <item>otp is</item>
+        <item>is otp</item>
+        <item>increase in credit limit</item>
+        <item>wrong pin entered</item>
+        <item>loan</item>
+        <item>credit limit increase</item>
+        <item>as requested</item>
+        <item>request to</item>
+        <item>annual fee waiver</item>
+        <item>declined</item>
+    </string-array>
+
+    <string name="perm_message_title">SMS permission needed</string>
+    <string name="perm_message_text">SMS permission is required to get your transactions information. Please tap on \'Give Permission\' to give the permission.</string>
+    <string name="perm_message_pos_btn">Give permission</string>
+    <string name="perm_message_neg_btn">Deny</string>
+
+    <string name="fingerprint_bottom_sheet_title">Authorize fingerprint</string>
+    <string name="fingerprint_bottom_sheet_subtitle">Please authorize for added security</string>
+    <string name="fingerprint_bottom_sheet_description">Authorization is required so that no one can check your transactions.</string>
+    <string name="fingerprint_bottom_sheet_neg_btn">Cancel</string>
+
+    <string name="fingerprint_dialog_title">Fingerprint Authorization Required</string>
+    <string name="fingerprint_dialog_message">Fingerprint authorization is needed for the added security of your data. Tap YES to give permission. No to exit.</string>
+    <string name="fingerprint_dialog_pos_btn">YES</string>
+    <string name="fingerprint_dialog_neg_btn">NO</string>
+
+    <string name="tab_summary">Summary</string>
+    <string name="tab_bank_account">Bank Account</string>
+    <string name="tab_cc">Credit Card</string>
+    <string name="tab_cash">Cash</string>
+
+    <string name="debited">- ₹ %1$s</string>
+    <string name="credited">+ ₹ %1$s</string>
+    <string name="num_start" tools:ignore="Typos">xxxx\u0020\u0020\u0020\u0020xxxx\u0020\u0020\u0020\u0020xxxx\u0020\u0020\u0020\u0020%1$s</string>
+    <string name="net">Net</string>
+    <string name="bill">Bill Payment</string>
+
+    <string name="no_acc_found">No accounts found</string>
+
 </resources>

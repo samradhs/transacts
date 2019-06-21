@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ViewMatch"
+    android:orientation="vertical"
+    tools:context=".ui.landing.LandingActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/act_ovr_bot_dots"
+        style="@style/ViewMatchWidth"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="4dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorAccent"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/act_ovr_viewpager"
+        style="@style/ViewMatch"/>
+
+</LinearLayout>

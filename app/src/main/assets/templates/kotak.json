@@ -1,0 +1,76 @@
+[
+  {
+    "msg": "Transaction of Rs %amt% has been made on Kotak credit card %num% on %date% at %merchant%. Available credit limit is %avail_limit%.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM"
+  },
+  {
+    "msg": "Transaction of Rs %amt% has been made on Kotak credit card %num% on %date% at %merchant%. Available credit limit is %avail_limit%.  Update your Aadhaar number on Kotak Credit Card by March 31, 2018 to enjoy a seamless credit card experience. Login to Net/Mobile Banking or click here to update bit.ly/Update_Aadhaar . Please ignore if already updated.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM"
+  },
+
+
+
+
+  {
+    "msg": "Thank you for the payment of Rs.%amt% for Kotakcard No %num% received through %merchant% on %date%",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yyyy"
+  },
+  {
+    "msg": "Dear Customer, Refund of Rs %amt% from %merchant% has been credited to your Kotak Credit Card ending %num% on %date%. If you have opted an EMI on this transaction, then please get the same cancelled by calling our 24 hour Customer Contact Center on 1860 266 2666.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yyyy"
+  },
+
+
+
+
+  {
+    "msg": "Thank you for the auto debit from your Kotak Bank Account %num% of Rs %amt% to %merchant% on %date%.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yyyy"
+  },
+
+
+
+
+  {
+    "msg": "Your a/c no. %num% is credited Rs.%amt% on %date% by a/c linked to virtual address %merchant% \\(UPI Ref no %upi_ref%\\).",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MM-yy"
+  },
+
+
+
+
+  {
+    "msg": "%bill_month% Stmt for Kotak Credit Card %num% has been generated. Due date %date% Min Amt. Rs. %min_payment% . Total Due Rs. %outstanding% . Your e-statement has been sent to your email address registered with the Bank. Visit https://www.kotak.com/ccstmt/nonlogincc/faces/jsp/nonLogin.jsp  to pay your bills and check detailed statement.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Kotak alert -Total Due on  Card %num% is Rs %outstanding%. Min amt Rs %min_payment%. Due Date %date%.To view statement please visit Netbanking at www.kotak.com.Pls ignore if paid.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Kotak introduces 811 - a digital savings account. Get Zero Balance Banking.*",
+    "a_type": "acc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Hi, your 811 Account has a permissible balance limit of Rs..*. To remove this restriction and enjoy additional benefits, visit your nearest Kotak Mahindra Bank Branch and complete Full KYC of your 811 Account.",
+    "a_type": "acc",
+    "t_type": "reject"
+  }
+]

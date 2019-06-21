@@ -1,0 +1,39 @@
+[
+  {
+    "msg": "A charge of INR %amt% has been initiated on your American Express Card No. %num% at %merchant% on %date% at .* IST.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd/MM/yyyy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, Rs %amt% has been credited to your American Express Card %num% on %date%. Payment subject to realisation. Thank you.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd/MM/yyyy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Cardmember,Your balance on American Express card ending in %num% is %outstanding% as of %date%",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd/MM/yyyy"
+  },
+  {
+    "msg": "\"Dear Customer, your statement for AMEX Card %num% has been generated. Min payment Rs.%min_payment%/total payment Rs.%outstanding% is due by %date%.\"",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd/MM/yy"
+  },
+  {
+    "msg": "The Amex Mobile App. Now view your transactions.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  }
+]

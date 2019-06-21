@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Dimensions used for text sizes
+    <dimen name="text_size_very_small">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_very_large">22sp</dimen>
+
+    // Dimensions used for margins or paddings
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_medium">10dp</dimen>
+    <dimen name="margin_large">15dp</dimen>
+    <dimen name="margin_very_large">20dp</dimen>
+
+    <dimen name="margin_login">30dp</dimen>
+
+    //Dimensions used for cards
+    <dimen name="card_radius">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+</resources>

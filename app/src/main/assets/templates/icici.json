@@ -1,0 +1,223 @@
+[
+  {
+    "msg": "Dear Customer, txn of INR %amt% using Credit Card %num% done at %merchant% on %date%. Avbl Cr lmt:INR %avail_limit%. For dispute,call 04033667777.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Tranx of INR %amt% using Credit Card %num% is made at %merchant% on %date%. Avbl Cr lmt:INR %avail_limit%, Total Cr lmt: INR %total_limit%",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, txn of INR %amt% with Credit Card %num% is made at %merchant% on %date%. Avbl Cr lmt: %avail_limit%. Pls update Aadhaar by 31-Mar-18.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Tranx of INR %amt% using Credit Card %num% is made at %merchant% on %date%. Avbl Cr lmt:INR %avail_limit%, Total Cr lmt: INR %total_limit%",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "INR%amt% debited on Credit Card %num% on %date%.Info:%merchant%.Avbl Lmt:INR%avail_limit%.%ad%",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, Refund of INR %amt% from %merchant% has been credited to your Credit Card %num% on %date%. For details, please call our Customer Care.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, Trxn of INR %amt% on Credit Card %num% at %merchant% Mobile dated %date% has been reversed. Avbl Cr limit is INR %avail_limit%.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, your Account %num% has been debited with INR %amt% on %date%. Info: %merchant%. The Available Balance is INR %bal%.For dispute,call 04033667777.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, acct %num% has been debited for Rs.%amt% on %date% towards linked %merchant%. UPI Ref no .*",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Acct %num% debited with INR%amt% on %date% and %merchant% credited.Info:UPI-%upi%.%ad%",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Acct %num% debited with INR %amt% on %date%.Info: %merchant%.Avbl Bal:INR %bal%.Call %ad%",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, your Account %num% has been debited with INR %amt% on %date%. Info: %merchant%. The Available Balance is INR %bal%.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, your Acct %num% has been debited with INR %amt% on %date%.Info: %merchant%.Avbl Bal is INR %bal%.For dispute, call 04033667777.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, your Account %num% has been debited with INR %amt%%date%. Info: %merchant%. The Available Balance is INR %bal%.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, Your a/c no. %num% is debited for Rs.%amt% on %date% and a/c %merchant% credited \\(IMPS Ref no %imps_num%\\).",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yyyy HH:mm:ss"
+  },
+  {
+    "msg": "Acct %num% debited with INR %amt% on %date% & Acct %merchant% credited. IMPS: %imps_num%. Call 18601207777 for dispute or SMS BLOCK 0025 to 9215676766",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer,txn of INR %amt% done via Debit Card of Acct %num% on %date%.Info: %merchant%.Avbl Bal:INR %bal%.For dispute,call 04033667777.",
+    "a_type": "acc",
+    "t_type": "dr",
+    "dateF": "dd-MMM-yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, acct %num% is credited with Rs.%amt% on %date% from %merchant%. UPI Ref no %upi%",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, your Account %num% has been credited with INR %amt% on %date%. Info: %merchant%. The Available Balance is INR %bal%.",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, Your a/c no. %num% is credited by Rs.%amt% on %date% by a/c linked to mobile %merchant%. \\(IMPS Ref no %imps_num%\\).",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yyyy HH:mm:ss"
+  },
+  {
+    "msg": "Dear Customer, your Acct %num% is credited with salary of INR %amt% on %date%. Info: %merchant%. The Available Balance is INR %bal%.",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, your Account %num% has been credited with salary of INR %amt% on %date%. Info: %merchant%. The Available Balance is INR %bal%.",
+    "a_type": "acc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, Total Amount Due on Credit Card %num% is INR %outstanding%. Amt will be debited from your bank account on or before %date%. Pls ignore if paid.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, stmt for Credit Card %num% has been sent to %email%. Total amt of Rs. %outstanding% or Min. amt of Rs. %min_payment% is due by %date%.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, payment of INR %amt% towards ICICI Bank Credit Card %cc_account% has been received through Auto Debit from Account %acc_num% on %date%. Thank you.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, thank you for your payment of INR %amt% towards ICICI Bank Credit Card Account %cc_account% through Auto Debit from Account %acc_num% on %date%",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "NEFT Transaction with reference number %ref_num% for Rs.%amt% has been credited to the beneficiary account on.*",
+    "a_type": "acc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "\"Dear Customer,transaction of Rs. %amt% using ICICI Bank Credit Card %num% has been converted into EMI on %date%.\"",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yyyy"
+  },
+  {
+    "msg": ".*Pockets VISA Card.*",
+    "a_type": "acc",
+    "t_type": "reject"
+  },
+  {
+    "msg": ".*Pockets wallet.*",
+    "a_type": "acc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, ICICI Bank launches EMI on debit cards.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, the Available Balance for your ICICI Bank Account %num% is INR %bal% as on %date%.",
+    "a_type": "acc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy HH:mm:ss"
+  },
+  {
+    "msg": "Dear Customer, Payment of INR %amt% has been received on your ICICI Bank Credit Card Account %num% on %date%.Thank you.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, Total Amount of INR %outstanding% and Minimum Amount of INR %min_payment% is due by %date% on your Credit Card %num%. Please ignore if already paid.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, you have a collect request for Rs.%amt% from vpa %merchant%. Login to your mobile application to authorise the transaction.",
+    "a_type": "acc",
+    "t_type": "reject"
+  }
+]

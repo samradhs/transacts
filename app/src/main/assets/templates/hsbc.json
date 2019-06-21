@@ -1,0 +1,75 @@
+[
+  {
+    "msg": ".*Your credit card %num% has been used at %merchant% for INR %amt% on %date%. Available limit - INR %avail_limit%; current outstanding - INR %outstanding%. If you want to report this as a fraud transaction%ad%.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "dd/MM/yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, we have received a payment of Rs.%amt% for credit card ending %num% on %date%. Thank you for using HSBC credit card.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd-MMM-yy"
+  },
+
+
+
+
+  {
+    "msg": "Dear Customer, total payment due on credit card ending with %num% is INR %outstanding% and minimum payment due is INR %min_payment%. To enjoy uninterrupted card usage, please ensure payment is realized by due date %date%.%ad%",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, statement for your credit card ending %num% is ready for viewing through Internet Banking. Payment due on %date%, Total payment due Rs.%outstanding% Min payment due Rs.%min_payment%",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd-MMM-yy"
+  },
+  {
+    "msg": "Dear Customer, statement for your credit card ending %num% has been sent to your mailing address. Payment due on %date%, Total payment due Rs.%outstanding% Min payment due Rs.%min_payment%.",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "ddMMMyy"
+  },
+  {
+    "msg": "Use %otp% as your\\(OTP\\)forTXN on HSBC credit card %num% for INR %amt%. OTP is usable once & valid for 5 mins. Please do not share it with anyone.",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, you have the facility of availing cash back.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, Congratulations! You have qualified for a Cashback.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, you can redeem your HSBC Credit Card reward points.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, your HSBC Credit Card \\(ending with %num%\\) gets you.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, congratulations! Your first transaction on the HSBC Credit Card has earned you.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer, don't forget to activate your HSBC Credit Card.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  }
+]

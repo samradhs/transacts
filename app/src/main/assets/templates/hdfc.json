@@ -1,0 +1,102 @@
+[
+  {
+    "msg": "Rs.%amt% was spent on ur HDFCBank CREDIT Card ending %num% on %date% at %merchant%.Avl bal - %avail_limit%, curr o/s - %outstanding%",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "yyyy-MM-dd:HH:mm:ss"
+  },
+  {
+    "msg": "Dear Smart Pay Customer,We have successfully debited your HDFC Bank Credit card ending %num% to pay your %merchant% for the amount Rs %amt%",
+    "a_type": "cc",
+    "t_type": "dr"
+  },
+  {
+    "msg": "Dear Smart Pay Customer,We have successfully debited your HDFC Bank crcard ending %num% to pay your %merchant% for the amount Rs %amt%",
+    "a_type": "cc",
+    "t_type": "dr"
+  },
+  {
+    "msg": "ALERT: You've spent Rs.%amt%  on CREDIT Card %num% at %merchant% on %date%.Avl bal - Rs.%avail_limit%, curr o/s - Rs.%outstanding%.Not you? Call 18002586161.",
+    "a_type": "cc",
+    "t_type": "dr",
+    "dateF": "yyyy-MM-dd:HH:mm:ss"
+  },
+
+
+
+
+  {
+    "msg": "Dear HDFC Bank Card member, Rs %amt% has been credited on your credit card ending %num% from %merchant% on %date%.",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd/MMM/yyyy"
+  },
+  {
+    "msg": "Dear HDFCBank Card member, Online Payment of Rs.%amt% vide Ref# (\\w+) was credited to your card ending %num% On %date%_value Date (.*)",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "dd/MMM/yyyy"
+  },
+  {
+    "msg": "Ur transaction on HDFC Bank CREDIT Card ending %num% for Rs. %amt%  has been credited/reversed by %merchant% on %date%",
+    "a_type": "cc",
+    "t_type": "cr",
+    "dateF": "yyyy-MM-dd:HH:mm:ss"
+  },
+
+
+
+
+
+  {
+    "msg": "Dear Customer, E-stmt for HDFCBank CreditCard (\\d+) will be sent to your Email ID. Min Due Rs.(\\d+) Total Due Rs.(\\d+). Payment due by (\\d+\\/\\w+\\/\\d+).",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Stmt for HDFCBank Creditcard ending (\\d+) is generated.Min due Rs (\\d+.\\d*) .Total Due Rs (\\d+.\\d*) .Pymt due on (\\d+\\/\\w+\\/\\d+)",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear Customer,  E-stmt for HDFCBank CreditCard %num% will be sent to your Email ID. Min Due Rs.%min_payment% Total Due Rs.%outstanding%. Payment due by %date%.%ad%",
+    "a_type": "cc",
+    "t_type": "reject",
+    "dateF": "dd/MMM/yyyy"
+  },
+  {
+    "msg": "Dear SmartPay customer, Please have adequate limit in your HDFC Bank Credit card as bill Scheduled for Payment (\\w+#\\d+) Rs.(\\d+.\\d*) DT-(\\d*).",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear .*, Congratulations! You have received .* e-Voucher.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear .*, Congratulations! You have won .* gift voucher.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Last day to avail your gift voucher of Rs. .* from HDFC Bank Activation Campaign.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Avail your .* voucher.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Celebrate your weekend with FREE.*",
+    "a_type": "cc",
+    "t_type": "reject"
+  },
+  {
+    "msg": "Dear HDFC Bank Cardmember, your transaction for Rs..* AT .*  is converted to EMI for .*",
+    "a_type": "cc",
+    "t_type": "reject"
+  }
+]
