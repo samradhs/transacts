@@ -18,7 +18,6 @@ import com.an.biometric.BiometricManager
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
-import java.security.Permission
 
 
 class LoginActivity : AppCompatActivity(), BiometricCallback {
@@ -26,6 +25,7 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
     companion object {
         private const val TAG = "LoginActivity"
         private const val REQUEST_READ_SMS      = 1001
+        private const val REQUEST_WRITE_STORAGE = 1002
     }
 
     private var authorized: Boolean = false
@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    showRationaleDialog()
+                    showSmsRationaleDialog()
                 }
                 return
             }
@@ -141,7 +141,7 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                showRationaleDialog()
+                showSmsRationaleDialog()
             } else {
                 // No explanation needed, we can request the permission.
                 getSmsPermission()
@@ -155,12 +155,44 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
         }
     }
 
+//    private fun checkStoragePermission() {
+//
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
+//            PackageManager.PERMISSION_GRANTED) {
+//
+////            Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show()
+//
+//            // Permission is not granted
+//            // Should we show an explanation?
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+//                // Show an explanation to the user *asynchronously* -- don't block
+//                // this thread waiting for the user's response! After the user
+//                // sees the explanation, try again to request the permission.
+//                showSmsRationaleDialog()
+//            } else {
+//                // No explanation needed, we can request the permission.
+//                getSmsPermission()
+//            }
+//
+//        } else {
+////            Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
+//            //  Permission has already been granted
+//            afterSmsPermission()
+//
+//        }
+//    }
+
     private fun getSmsPermission() {
         ActivityCompat.requestPermissions(this,
             arrayOf(Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS), REQUEST_READ_SMS)
     }
+//
+//    private fun getStoragePermission() {
+//        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+//            REQUEST_WRITE_STORAGE)
+//    }
 
-    private fun showRationaleDialog() {
+    private fun showSmsRationaleDialog() {
 
         AlertDialog.Builder(this)
             .setTitle(R.string.perm_message_title)
@@ -178,6 +210,24 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
             .show()
     }
 
+//    private fun showStorageRationaleDialog() {
+//
+//        AlertDialog.Builder(this)
+//            .setTitle(R.string.perm_message_title_storage)
+//            .setMessage(R.string.perm_message_text)
+//            .setPositiveButton(R.string.perm_message_pos_btn) { _, which ->
+//                Log.e(TAG, "dialog: $which")
+//                getSmsPermission()
+//            }
+//            .setNegativeButton(R.string.perm_message_neg_btn) { _, which ->
+//                Log.e(TAG, "dialog: $which")
+//                finish()
+//            }
+//            .setCancelable(false)
+//            .create()
+//            .show()
+//    }
+
     private fun afterSmsPermission() {
 
         val context = this
@@ -190,11 +240,6 @@ class LoginActivity : AppCompatActivity(), BiometricCallback {
 
             uiThread {
 
-//                Log.e(TAG, "printing in ui thread")
-//                for (transaction in list) {
-//                    Log.e(TAG, "$transaction")
-//                }
-//
                 val openLanding = Intent(this@LoginActivity, LandingActivity::class.java)
                 openLanding.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(openLanding)

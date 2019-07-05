@@ -7,6 +7,7 @@
     <dimen name="text_size_medium">16sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_very_large">22sp</dimen>
+    <dimen name="text_size_app_name">30sp</dimen>
 
     // Dimensions used for margins or paddings
     <dimen name="margin_small">5dp</dimen>

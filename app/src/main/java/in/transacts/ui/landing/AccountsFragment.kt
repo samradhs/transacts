@@ -31,8 +31,8 @@ class AccountsFragment: Fragment() {
         }
     }
 
-    private var transactions: List<TransactionSer> = emptyList()
-    private var accMap: MutableMap<String, ArrayList<TransactionSer>> = mutableMapOf()
+    private lateinit var transactions: List<TransactionSer>
+    private val accMap: MutableMap<String, ArrayList<TransactionSer>> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,15 +56,16 @@ class AccountsFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val rootView = inflater.inflate(R.layout.fragment_accounts, container, false)
-        val parent: ViewGroup = rootView as ViewGroup
+        val rootView: View
 
         if (accMap.isEmpty()) {
-            val placeHolder = inflater.inflate(R.layout.page_placeholder, parent, false) as TextView
-            placeHolder.text = getString(R.string.no_acc_found)
-            parent.addView(placeHolder)
+            rootView = inflater.inflate(R.layout.layout_page_placeholder, container, false) as TextView
+            rootView.text = getString(R.string.no_acc_found)
 
         } else {
+            rootView = inflater.inflate(R.layout.fragment_accounts, container, false)
+            val parent: ViewGroup = rootView.findViewById(R.id.accounts_cont)
+
             for (keys in accMap.keys) {
                 Log.e(TAG, "keys: $keys")
                 val numTrans = accMap[keys]!!
@@ -102,11 +103,14 @@ class AccountsFragment: Fragment() {
             credited - debited
         }
 
-        val netStr = if (netDebit) {
-            getString(R.string.debited, TransactionUtils.getFormattedAmount(net))
-        } else {
-            getString(R.string.credited, TransactionUtils.getFormattedAmount(net))
-        }
+//        val netStr = if (netDebit) {
+//            getString(R.string.debited, TransactionUtils.getFormattedAmount(net))
+//        } else {
+//            getString(R.string.credited, TransactionUtils.getFormattedAmount(net))
+//        }
+
+        val netStr = TransactionUtils.getAmountForUI(context!!, net, netDebit)
+//        Log.e(TAG, "netStr: $netStr")
 
         val binding= DataBindingUtil.inflate<ItemAccSummaryBinding>(layoutInflater,
             R.layout.item_acc_summary, parent, false)

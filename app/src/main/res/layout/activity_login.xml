@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/ViewMatch"
+    android:background="@color/colorPrimary"
     tools:context=".ui.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_app_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/login_app_name"
+        style="@style/ViewWrap"
+        android:text="@string/app_name"
+        android:textSize="@dimen/text_size_app_name"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/login_app_logo"
+        app:layout_constraintBottom_toTopOf="@id/login_progress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/margin_small"/>
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -11,6 +37,11 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:indeterminate="true"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/login_app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/margin_large"/>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

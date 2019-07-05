@@ -2,6 +2,21 @@
     <string name="app_name">Transacts</string>
     <string name="rupee">₹ %1$s</string>
 
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+
     <string-array name="rejection_strings">
         <item>one time password</item>
         <item>onetime password</item>
@@ -22,6 +37,9 @@
     <string name="perm_message_pos_btn">Give permission</string>
     <string name="perm_message_neg_btn">Deny</string>
 
+    <string name="perm_message_title_storage">Storage permission needed</string>
+    <string name="perm_message_text_storage">Storage permission is required to get information of rejected messages. Please tap on \'Give Permission\' to give the permission.</string>
+
     <string name="fingerprint_bottom_sheet_title">Authorize fingerprint</string>
     <string name="fingerprint_bottom_sheet_subtitle">Please authorize for added security</string>
     <string name="fingerprint_bottom_sheet_description">Authorization is required so that no one can check your transactions.</string>
@@ -36,6 +54,16 @@
     <string name="tab_bank_account">Bank Account</string>
     <string name="tab_cc">Credit Card</string>
     <string name="tab_cash">Cash</string>
+
+    <string name="summary_card_title">Debit Summary</string>
+    <string name="total_debit">Total Debit this month:</string>
+    <string name="this_month">This Month</string>
+    <string name="last_months">Last 12 months</string>
+    <string name="bank_acc_dr">Bank Account Debits</string>
+    <string name="cc_dr">Credit Card Debits</string>
+    <string name="select_month_title">Month Wise Transactions</string>
+    <string name="select_month_text">Select a month from the list to see transactions for that month</string>
+    <string name="select_month_btn">View Transactions</string>
 
     <string name="debited">- ₹ %1$s</string>
     <string name="credited">+ ₹ %1$s</string>

@@ -41,6 +41,7 @@ dependencies {
     implementation 'org.jetbrains.anko:anko-common:0.9'
     implementation(group: 'com.an.biometric', name: 'biometric-auth', version: '0.1.0', ext: 'aar', classifier: '')
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

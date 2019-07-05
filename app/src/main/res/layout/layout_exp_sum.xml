@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ViewMatchWidth">
+
+    <TextView
+        android:id="@+id/sum_title"
+        style="@style/ViewMatchWidth"
+        android:text="@string/this_month"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/sum_acc_exp"
+        style="@style/ViewWrap"
+        android:text="@string/bank_acc_dr"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sum_title"/>
+
+    <TextView
+        android:id="@+id/sum_acc_exp_amt"
+        style="@style/ViewWrap"
+        android:text="this month bank account dr"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintLeft_toRightOf="@id/sum_acc_exp"
+        app:layout_constraintTop_toTopOf="@id/sum_acc_exp"
+        android:layout_marginStart="@dimen/margin_small"/>
+
+    <TextView
+        android:id="@+id/sum_cc_exp"
+        style="@style/ViewWrap"
+        android:text="@string/cc_dr"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sum_acc_exp"/>
+
+    <TextView
+        android:id="@+id/sum_cc_exp_amt"
+        style="@style/ViewWrap"
+        android:text="this month bank cc dr"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintLeft_toRightOf="@id/sum_cc_exp"
+        app:layout_constraintTop_toTopOf="@id/sum_cc_exp"
+        android:layout_marginStart="@dimen/margin_small"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

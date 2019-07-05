@@ -1,11 +1,11 @@
-package `in`.transacts.ui.landing
+package `in`.transacts.ui.base
 
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
-internal class LandingAdapter(fragmentManager: FragmentManager) :
+internal class BaseViewPagerAdapter(fragmentManager: FragmentManager) :
     FragmentStatePagerAdapter(fragmentManager) {
 
     private val fragments   = ArrayList<Fragment>()

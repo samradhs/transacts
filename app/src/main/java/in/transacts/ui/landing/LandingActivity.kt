@@ -2,14 +2,19 @@ package `in`.transacts.ui.landing
 
 import `in`.transacts.R
 import `in`.transacts.enums.AccountType
+import `in`.transacts.ui.base.BaseActivity
 import `in`.transacts.ui.TransactionSer
+import `in`.transacts.ui.base.BaseViewPagerAdapter
 import `in`.transacts.utils.DateTimeUtils
+import `in`.transacts.utils.FileWriteUtils
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_landing.*
+import kotlinx.android.synthetic.main.layout_viewpager_tabs.*
+import org.jetbrains.anko.doAsync
+import org.json.JSONObject
+import java.io.File
 
-class LandingActivity : AppCompatActivity(), GetDbData {
+class LandingActivity : BaseActivity(), GetDbData {
 
     companion object {
         private const val TAG = "LandingActivity"
@@ -17,9 +22,13 @@ class LandingActivity : AppCompatActivity(), GetDbData {
 
     private lateinit var landingVM: LandingVM
 
+    override fun getLayoutId(): Int {
+
+        return R.layout.layout_viewpager_tabs
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_landing)
 
         landingVM = LandingVM()
         landingVM.getAllData(this, this)
@@ -37,18 +46,22 @@ class LandingActivity : AppCompatActivity(), GetDbData {
         Log.e(TAG, "${DateTimeUtils.getDateFormatted(monthStart)}, ${DateTimeUtils.getTimeFormatted(monthStart)}")
 
         val thisMonthTrans = response.filter {
-            t -> t.ts >= monthStart
+            it.ts >= monthStart
+        }
+
+        val remMonthTrans = response.filter {
+            it.ts < monthStart
         }
 
         Log.e(TAG, "thisMonthTrans: ${thisMonthTrans.size}")
 
         val accTrans = thisMonthTrans.filter {
-            t -> t.accountType.equals(AccountType.BankAccount.accountType, true)
+            it.accountType.equals(AccountType.BankAccount.accountType, true)
         }
 
         Log.e(TAG, "acc transactions::::: ${accTrans.size}")
         val ccTrans= thisMonthTrans.filter {
-            t -> t.accountType.equals(AccountType.CreditCard.accountType, true)
+            it.accountType.equals(AccountType.CreditCard.accountType, true)
         }
 
         Log.e(TAG, "cc transactions::::: ${ccTrans.size}")
@@ -62,20 +75,21 @@ class LandingActivity : AppCompatActivity(), GetDbData {
 //            Log.e(TAG, "$t")
 //        }
 
-        setViewPager(accTrans, ccTrans)
+        setViewPager(thisMonthTrans, remMonthTrans, accTrans, ccTrans)
     }
 
-    private fun setViewPager(accTrans: List<TransactionSer>, ccTrans: List<TransactionSer>) {
+    private fun setViewPager(thisMonthTrans: List<TransactionSer>, remMonthTrans: List<TransactionSer>,
+                             accTrans: List<TransactionSer>, ccTrans: List<TransactionSer>) {
 
-        val viewPager = act_ovr_viewpager
-        val landingAdapter = LandingAdapter(supportFragmentManager)
+        val viewPager = cmn_viewpager
+        val landingAdapter = BaseViewPagerAdapter(supportFragmentManager)
 
-//        landingAdapter.addFragment(SummaryFragment.newInstance(), getString(R.string.tab_summary))
+        landingAdapter.addFragment(SummaryFragment.newInstance(thisMonthTrans, remMonthTrans), getString(R.string.tab_summary))
         landingAdapter.addFragment(AccountsFragment.newInstance(accTrans), getString(R.string.tab_bank_account))
         landingAdapter.addFragment(AccountsFragment.newInstance(ccTrans), getString(R.string.tab_cc))
 //        landingAdapter.addFragment(AccountsFragment.newInstance(ccTrans), getString(R.string.tab_cash)")
 
         viewPager.adapter = landingAdapter
-        act_ovr_bot_dots.setupWithViewPager(viewPager)
+        cmn_tabs.setupWithViewPager(viewPager)
     }
 }

@@ -3,12 +3,14 @@ package `in`.transacts.ui.transactions
 import `in`.transacts.R
 import `in`.transacts.databinding.ItemTransactionBinding
 import `in`.transacts.ui.TransactionSer
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class TransactionAdapter (private val items: List<TransactionSer>): RecyclerView.Adapter<TransactionVH>() {
+class TransactionAdapter (private val items: List<TransactionSer>,
+                          private val context: Context): RecyclerView.Adapter<TransactionVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionVH {
 
@@ -22,6 +24,7 @@ class TransactionAdapter (private val items: List<TransactionSer>): RecyclerView
 
         val transaction = items[position]
         holder.binding.transaction = transaction
+        holder.binding.context = context
     }
 
     override fun getItemCount(): Int {

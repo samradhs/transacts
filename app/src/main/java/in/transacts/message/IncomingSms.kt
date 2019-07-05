@@ -5,6 +5,8 @@ import `in`.transacts.db.Database
 import `in`.transacts.db.Transaction
 import `in`.transacts.enums.Bank
 import `in`.transacts.parser.Parser
+import `in`.transacts.ui.landing.LandingActivity
+import `in`.transacts.utils.FileWriteUtils
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -21,6 +23,7 @@ class IncomingSms: BroadcastReceiver() {
     companion object {
         private const val TAG = "IncomingSms"
         private const val PDUS = "pdus"
+        private const val LOGS_FILE = "Logs.txt"
     }
 
     private val sms = SmsManager.getDefault()
@@ -29,6 +32,12 @@ class IncomingSms: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
 
         Log.e(TAG, "onReceive")
+        doAsync {
+
+            val logJson = JSONObject()
+            logJson.put("onReceive", true)
+            FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
+        }
 
         if (intent == null || intent.action != Telephony.Sms.Intents.SMS_RECEIVED_ACTION) return
         val bundle = intent.extras ?: return
@@ -43,6 +52,17 @@ class IncomingSms: BroadcastReceiver() {
                 val body = currentMessage.displayMessageBody
                 val ts = currentMessage.timestampMillis
                 val address = currentMessage.displayOriginatingAddress
+
+
+                doAsync {
+
+                    val logJson = JSONObject()
+                    logJson.put("body", body)
+                    logJson.put("ts", ts)
+                    logJson.put("address", address)
+                    logJson.put("originating address", currentMessage.originatingAddress)
+                    FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
+                }
 
                 var response: JSONObject
                 when {

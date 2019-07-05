@@ -8,7 +8,7 @@
     tools:context=".ui.landing.LandingActivity">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/act_ovr_bot_dots"
+        android:id="@+id/cmn_tabs"
         style="@style/ViewMatchWidth"
         app:tabGravity="fill"
         app:tabIndicatorHeight="4dp"
@@ -17,7 +17,7 @@
         app:tabSelectedTextColor="@color/colorAccent"/>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/act_ovr_viewpager"
+        android:id="@+id/cmn_viewpager"
         style="@style/ViewMatch"/>
 
 </LinearLayout>

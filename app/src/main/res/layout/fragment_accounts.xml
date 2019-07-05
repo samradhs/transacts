@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/accounts_cont"
-    android:orientation="vertical"
-    style="@style/ViewMatch"/>
+<ScrollView
+    style="@style/ViewMatch">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/accounts_cont"
+        android:orientation="vertical"
+        style="@style/ViewMatchWidth"/>
+
+</ScrollView>

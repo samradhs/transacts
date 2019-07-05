@@ -7,6 +7,10 @@
         <import type="in.transacts.utils.DateTimeUtils"/>
 
         <variable
+            name="context"
+            type="android.content.Context"/>
+
+        <variable
             name="transaction"
             type="in.transacts.ui.TransactionSer"/>
 
@@ -37,7 +41,7 @@
             <TextView
                 android:id="@+id/amt_tv"
                 style="@style/ViewMatchWidth"
-                android:text="@{@string/rupee(TransactionUtils.INSTANCE.getFormattedAmount(transaction))}"
+                android:text="@{TransactionUtils.INSTANCE.getAmountForUI(context, transaction)}"
                 android:textColor="@{TransactionUtils.INSTANCE.isDebit(transaction) ? @color/debit : @color/credit}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/merchant_tv"

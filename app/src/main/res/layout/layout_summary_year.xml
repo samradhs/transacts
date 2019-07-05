@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/LandingCard">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ViewMatchWidth"
+        android:padding="@dimen/margin_very_large">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/ViewMatchWidth"
+            android:text="@string/summary_card_title"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/total_debit"
+            style="@style/ViewWrap"
+            android:text="@string/total_debit"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
+
+        <TextView
+            android:id="@+id/total_debit_amt"
+            style="@style/ViewWrap"
+            android:text="debit amt"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintLeft_toRightOf="@id/total_debit"
+            app:layout_constraintTop_toTopOf="@id/total_debit"
+            android:layout_marginStart="@dimen/margin_small"/>
+
+        <include
+            android:id="@+id/this_month_exp"
+            style="@style/ViewMatchWidth"
+            layout="@layout/layout_exp_sum"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_debit"/>
+
+        <include
+            android:id="@+id/last_12_months_exp"
+            style="@style/ViewMatchWidth"
+            layout="@layout/layout_exp_sum"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/this_month_exp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
