@@ -32,12 +32,12 @@ class IncomingSms: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
 
         Log.e(TAG, "onReceive")
-        doAsync {
-
-            val logJson = JSONObject()
-            logJson.put("onReceive", true)
-            FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
-        }
+//        doAsync {
+//
+//            val logJson = JSONObject()
+//            logJson.put("onReceive", true)
+//            FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
+//        }
 
         if (intent == null || intent.action != Telephony.Sms.Intents.SMS_RECEIVED_ACTION) return
         val bundle = intent.extras ?: return
@@ -56,12 +56,12 @@ class IncomingSms: BroadcastReceiver() {
 
                 doAsync {
 
-                    val logJson = JSONObject()
-                    logJson.put("body", body)
-                    logJson.put("ts", ts)
-                    logJson.put("address", address)
-                    logJson.put("originating address", currentMessage.originatingAddress)
-                    FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
+//                    val logJson = JSONObject()
+//                    logJson.put("body", body)
+//                    logJson.put("ts", ts)
+//                    logJson.put("address", address)
+//                    logJson.put("originating address", currentMessage.originatingAddress)
+//                    FileWriteUtils.writeJsonToFileExternal(LOGS_FILE, logJson)
                 }
 
                 var response: JSONObject
